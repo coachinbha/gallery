@@ -1,29 +1,144 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Simple Image Gallery</title>
+  <title>Windsor Chess Lions over the years</title>
   <style>
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-gap: 20px;
-    }
 
-    .gallery img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-    }
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 40px;
+  width: 100%;
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 10px;
+  padding-top: 100px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.3s ease-in-out;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.5s ease-in forwards;
+}
+
+/* Enhanced hover effect - pure size growth */
+.gallery img:hover {
+  transform: scale(1.1);
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+/* Stagger animation delays */
+.gallery img:nth-child(-n+100) {
+  animation-delay: calc(0.1s * var(--nth-child));
+}
+
+/* Generate CSS variables for each child */
+.gallery img:nth-child(1) { --nth-child: 1; }
+.gallery img:nth-child(2) { --nth-child: 2; }
+.gallery img:nth-child(3) { --nth-child: 3; }
+.gallery img:nth-child(4) { --nth-child: 4; }
+.gallery img:nth-child(5) { --nth-child: 5; }
+.gallery img:nth-child(6) { --nth-child: 6; }
+.gallery img:nth-child(7) { --nth-child: 7; }
+.gallery img:nth-child(8) { --nth-child: 8; }
+.gallery img:nth-child(9) { --nth-child: 9; }
+.gallery img:nth-child(10) { --nth-child: 10; }
+.gallery img:nth-child(11) { --nth-child: 11; }
+.gallery img:nth-child(12) { --nth-child: 12; }
+.gallery img:nth-child(13) { --nth-child: 13; }
+.gallery img:nth-child(14) { --nth-child: 14; }
+.gallery img:nth-child(15) { --nth-child: 15; }
+.gallery img:nth-child(16) { --nth-child: 16; }
+.gallery img:nth-child(17) { --nth-child: 17; }
+.gallery img:nth-child(18) { --nth-child: 18; }
+.gallery img:nth-child(19) { --nth-child: 19; }
+.gallery img:nth-child(20) { --nth-child: 20; }
+
+/* Continue for more children, truncated for brevity */
+.gallery img:nth-child(100) { --nth-child: 100; }
+
+/* Responsive Grid Columns */
+@media screen and (max-width: 1600px) {
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 25px;
+    padding-top: 80px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    padding-top: 60px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .gallery {
+    grid-template-columns: 1fr;
+    grid-gap: 15px;
+    padding-top: 50px;
+  }
+  
+  .gallery img:hover {
+    transform: scale(1.05); /* Slightly less scaling on mobile */
+  }
+}
   </style>
 </head>
-<body>
-  <div class="gallery">
-    <img src="site1.jpg" alt="Image 1">
-    <img src="/api/placeholder/400/320" alt="Image 2">
-    <img src="/api/placeholder/400/320" alt="Image 3">
-    <img src="/api/placeholder/400/320" alt="Image 4">
-    <img src="/api/placeholder/400/320" alt="Image 5">
-    <img src="/api/placeholder/400/320" alt="Image 6">
-  </div>
-</body>
-</html>
+<div class="gallery">
+      <img src="site1.jpg" alt="Image 1">
+      <img src="site2.jpg" alt="Image 2">
+      <img src="site3.jpg" alt="Image 3">
+      <img src="site4.jpg" alt="Image 4">
+      <img src="site5.jpg" alt="Image 5">
+      <img src="site6.jpg" alt="Image 6">
+      <img src="site7.jpg" alt="Image 7">
+      <img src="site8.jpg" alt="Image 8">
+      <img src="site9.jpg" alt="Image 9">
+      <img src="site10.jpg" alt="Image 10">
+      <img src="site11.jpg" alt="Image 11">
+      <img src="site12.jpg" alt="Image 12">
+      <img src="site13.jpg" alt="Image 13">
+      <img src="site14.jpg" alt="Image 14">
+      <img src="site15.jpg" alt="Image 15">
+      <img src="site16.jpg" alt="Image 16">
+      <img src="site17.jpg" alt="Image 17">
+      <img src="site18.jpg" alt="Image 18">
+      <img src="site19.jpg" alt="Image 19">
+      <img src="site20.jpg" alt="Image 20">      
+    </div>
+  </body>
+  </html>
+
+
